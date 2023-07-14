@@ -1,0 +1,37 @@
+.input-container {
+
+  margin-bottom: 18px;
+
+  .label {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18.2px;
+    color: black;
+    cursor: pointer;
+  }
+
+  .input {
+    position: relative;
+
+    .form-control {
+      border: 1px solid #F0EEF5;
+      border-radius: 10px;
+      height: 48px;
+      width: 100%;
+      font-size: 14px;
+      line-height: 18.2px;
+      font-weight: 500;
+      margin-top: 8px;
+    }
+
+    img {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+  }
+}

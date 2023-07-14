@@ -1,0 +1,220 @@
+.signup-container {
+  display: flex;
+  height: 100%;
+
+  .form-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    .form {
+      width: 437px;
+
+      .form-text{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 18px;
+
+        .title {
+          font-weight: 900;
+          font-size: 40px;
+          line-height: 54px;
+          text-align: center;
+          margin-bottom: 12px;
+          color: black;
+        }
+
+        .description {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 27px;
+          text-align: center;
+          width: 85%;
+          margin-bottom: 0;
+        }
+      }
+
+      .terms-and-conditions {
+
+        input {
+          margin-right: 12px;
+          width: 28px;
+          height: 28px;
+          border-radius: 10px;
+          border: 1px solid #F0EEF5;
+        }
+
+        .form-check-input:checked {
+          background-color: var(--primary);
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+
+        display: flex;
+        align-items: center;
+      }
+
+      .forgot-password {
+        text-align: right;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 21px;
+        
+        a {
+          color: black;
+        }
+      }
+
+      .actions-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .signup-button {
+          width: 100%;
+          height: 48px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--primary);
+          color: black;
+          font-weight: 900;
+          font-size: 15px;
+          line-height: 20.25px;
+          border: none;
+          margin-top: 18px;
+        }
+
+        .signin-button {
+          border: 1px solid #F0EEF5 !important;
+          background-color: white;
+          margin-top: 18px;
+          height: 37px;
+          border-radius: 19px;
+          width: 76px;
+          padding: 8px, 12px, 8px, 12px;
+          font-weight: 900;
+          font-size: 15px;
+          line-height: 20.25px;
+        }
+
+        .signin-button-1 {
+          width: 100%;
+          height: 48px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--primary);
+          color: black;
+          font-weight: 900;
+          font-size: 15px;
+          line-height: 20.25px;
+          border: none;
+          margin-top: 18px;
+        }
+
+        .signup-button-1 {
+          border: 1px solid #F0EEF5;
+          background-color: white;
+          margin-top: 18px;
+          height: 37px;
+          border-radius: 19px;
+          width: 76px;
+          padding: 8px, 12px, 8px, 12px;
+          font-weight: 900;
+          font-size: 15px;
+          line-height: 20.25px;
+        }
+        .instruction {
+          width: 100%;
+        }
+
+        .send-instruction {
+          width: 100%;
+          height: 48px;
+          border-radius: 10px;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--primary);
+          color: black;
+          font-weight: 900;
+          font-size: 15px;
+          line-height: 20.25px;
+          border: none;
+          margin-top: 18px;
+        }
+
+        .recover-password {
+          width: 100%;
+          height: 48px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--primary);
+          color: black;
+          font-weight: 900;
+          font-size: 15px;
+          line-height: 20.25px;
+          border: none;
+          margin-top: 18px;
+        }
+      }
+    }
+
+    .logo {
+      position: absolute;
+      top: 40px;
+      left: 34px;
+      font-size: 24px;
+      line-height: 31.2px;
+      font-weight: 900;
+
+      .app-text {
+        color: var(--primary);
+      }
+
+      .back {
+        color: black;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25.2px;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  .phone-preview {
+    width: 692px;
+    height: 100%;
+    
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;    
+
+    .form-container {
+      padding: 20px;
+      padding-top: 100px;
+    }
+
+    .phone-preview {
+      display: none;
+    }
+  }
+}
