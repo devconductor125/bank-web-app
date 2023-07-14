@@ -1,8 +1,19 @@
-import { ChevronLeftIcon, WifiIcon } from "@heroicons/react/24/solid";
+import { ChevronLeftIcon, WifiIcon, ArrowSmallLeftIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 
 const PayRightBar = (props) => {
 	const [amount, setAmount] = useState(0);
+
+	const handleNumber = (value) => {
+		const newValue = amount == 0 ? value : amount * 1 + "" + value;
+		setAmount(parseInt(newValue));
+	};
+
+	const backSpace = () => {
+		const curValue = amount.toString();
+		const newValue = curValue.slice(0, curValue.length - 1);
+		setAmount(newValue * 1);
+	};
 	return (
 		<div>
 			<div className="p-6">
@@ -37,40 +48,72 @@ const PayRightBar = (props) => {
 						<h2 className="text-black font-bold text-xl ml-2">$242,567</h2>
 					</div>
 				</div>
-				<div className="w-full mt-6">
-					<button className="btn btn-blue w-full py-3">Send Money</button>
+				<div className="w-full mt-8">
+					<button className="btn btn-blue w-full py-3" onClick={props.sendMoneyCheck}>
+						Send Money
+					</button>
 				</div>
 				<div className="w-full grid grid-cols-3 gap-3 mt-3">
 					<div className="text-black col-span-1 text-center w-full text-2xl ">
-						<button className="btn-pay w-full rounded-2xl py-3">1</button>
+						<button className="btn-pay w-full rounded-2xl py-3 font-bold" onClick={() => handleNumber(1)}>
+							1
+						</button>
 					</div>
 					<div className="text-black col-span-1 text-center w-full text-2xl ">
-						<button className="btn-pay w-full rounded-2xl py-3">2</button>
+						<button className="btn-pay w-full rounded-2xl py-3 font-bold" onClick={() => handleNumber(2)}>
+							2
+						</button>
 					</div>
 					<div className="text-black col-span-1 text-center w-full text-2xl ">
-						<button className="btn-pay w-full rounded-2xl py-3">3</button>
-					</div>
-				</div>
-				<div className="w-full grid grid-cols-3 gap-3 mt-3">
-					<div className="text-black col-span-1 text-center w-full text-2xl ">
-						<button className="btn-pay w-full rounded-2xl py-3">4</button>
-					</div>
-					<div className="text-black col-span-1 text-center w-full text-2xl ">
-						<button className="btn-pay w-full rounded-2xl py-3">5</button>
-					</div>
-					<div className="text-black col-span-1 text-center w-full text-2xl ">
-						<button className="btn-pay w-full rounded-2xl py-3">6</button>
+						<button className="btn-pay w-full rounded-2xl py-3 font-bold" onClick={() => handleNumber(3)}>
+							3
+						</button>
 					</div>
 				</div>
 				<div className="w-full grid grid-cols-3 gap-3 mt-3">
 					<div className="text-black col-span-1 text-center w-full text-2xl ">
-						<button className="btn-pay w-full rounded-2xl py-3">7</button>
+						<button className="btn-pay w-full rounded-2xl py-3 font-bold" onClick={() => handleNumber(4)}>
+							4
+						</button>
 					</div>
 					<div className="text-black col-span-1 text-center w-full text-2xl ">
-						<button className="btn-pay w-full rounded-2xl py-3">8</button>
+						<button className="btn-pay w-full rounded-2xl py-3 font-bold" onClick={() => handleNumber(5)}>
+							5
+						</button>
 					</div>
 					<div className="text-black col-span-1 text-center w-full text-2xl ">
-						<button className="btn-pay w-full rounded-2xl py-3">9</button>
+						<button className="btn-pay w-full rounded-2xl py-3 font-bold" onClick={() => handleNumber(6)}>
+							6
+						</button>
+					</div>
+				</div>
+				<div className="w-full grid grid-cols-3 gap-3 mt-3">
+					<div className="text-black col-span-1 text-center w-full text-2xl ">
+						<button className="btn-pay w-full rounded-2xl py-3 font-bold" onClick={() => handleNumber(7)}>
+							7
+						</button>
+					</div>
+					<div className="text-black col-span-1 text-center w-full text-2xl ">
+						<button className="btn-pay w-full rounded-2xl py-3 font-bold" onClick={() => handleNumber(8)}>
+							8
+						</button>
+					</div>
+					<div className="text-black col-span-1 text-center w-full text-2xl ">
+						<button className="btn-pay w-full rounded-2xl py-3 font-bold" onClick={() => handleNumber(9)}>
+							9
+						</button>
+					</div>
+				</div>
+				<div className="w-full grid grid-cols-3 gap-3 mt-3">
+					<div className="text-black col-span-2 text-center w-full text-2xl ">
+						<button className="btn-pay w-full rounded-2xl py-3 font-bold" onClick={() => handleNumber(0)}>
+							0
+						</button>
+					</div>
+					<div className="text-black col-span-1 text-center w-full text-2xl ">
+						<button className="btn-pay w-full rounded-2xl py-3 flex justify-center" onClick={backSpace}>
+							<ArrowSmallLeftIcon width={30} />
+						</button>
 					</div>
 				</div>
 			</div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { WalletIcon, ArchiveBoxIcon, CurrencyDollarIcon, ArrowLeftOnRectangleIcon, ChevronLeftIcon, ShoppingCartIcon, MapPinIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
+import { WalletIcon, ArchiveBoxIcon, CurrencyDollarIcon, ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
 
 import Sidebar from "../../components/Layout/Sidebar";
@@ -15,12 +15,14 @@ import receive from "../../assets/images/receive.svg";
 import TransactionSide from "../../components/Layout/TransactionSide";
 import SendMoneyRightBar from "../../components/Layout/SendMoneyRightBar";
 import PayRightBar from "../../components/Layout/PayRightBar";
+import CheckoutMessage from "../../components/Layout/CheckoutMessage";
 
 const Dashboard = () => {
 	const [transactions, setTransaction] = useState([]);
 	const [showRightBar, setShowRightBar] = useState(false);
 	const [showSendMoney, setShowSendMoney] = useState(false);
 	const [showPayPage, setShowPayPage] = useState(false);
+	const [showCheckOut, setCheckOut] = useState(false);
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -95,6 +97,21 @@ const Dashboard = () => {
 	const hidePayPage = () => {
 		setShowPayPage(false);
 	};
+
+	const sendMoneyCheck = () => {
+		setCheckOut(true);
+	};
+
+	const hideCheckout = () => {
+		setCheckOut(false);
+	};
+
+	const clearAll = () => {
+		hideCheckout();
+		hidePayPage();
+		hideSendBar();
+	};
+
 	return (
 		<>
 			<div className="flex-col align-center">
@@ -107,7 +124,10 @@ const Dashboard = () => {
 				<SendMoneyRightBar hideSendBar={hideSendBar} goToPay={goToPay} />
 			</div>
 			<div className={`top-0 right-0 w-full lg:w-[500px] bg-white shadow-2xl text-white fixed h-full z-40  ease-in-out duration-300 ${showPayPage ? "translate-x-0 " : "translate-x-full"}`}>
-				<PayRightBar hidePayPage={hidePayPage} />
+				<PayRightBar hidePayPage={hidePayPage} sendMoneyCheck={sendMoneyCheck} />
+			</div>
+			<div className={`top-0 right-0 w-full lg:w-[500px] bg-white shadow-2xl text-white fixed h-full z-40  ease-in-out duration-300 ${showCheckOut ? "translate-x-0 " : "translate-x-full"}`}>
+				<CheckoutMessage hideCheckout={hideCheckout} clearAll={clearAll} />
 			</div>
 			<div className="text-center w-full max-w-[calc(100vw-21rem)] float-right px-6 py-5">
 				<div className="w-100 flex justify-between font-satoshi">

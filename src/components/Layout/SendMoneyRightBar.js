@@ -1,5 +1,4 @@
-import { WalletIcon, ChevronLeftIcon, ShoppingCartIcon, MapPinIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
-import outcome from "../../assets/images/outcome.svg";
+import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 import { useState, useEffect } from "react";
 
 const SendMoney = (props) => {
