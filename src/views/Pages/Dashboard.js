@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { WalletIcon, ArchiveBoxIcon, CurrencyDollarIcon, ArrowLeftOnRectangleIcon, ChevronLeftIcon } from "@heroicons/react/24/solid";
+import { WalletIcon, ArchiveBoxIcon, CurrencyDollarIcon, ArrowLeftOnRectangleIcon, ChevronLeftIcon, ShoppingCartIcon, MapPinIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
 
 import Sidebar from "../../components/Layout/Sidebar";
@@ -12,9 +12,15 @@ import outcome from "../../assets/images/outcome.svg";
 import send from "../../assets/images/send.svg";
 import receive from "../../assets/images/receive.svg";
 
+import TransactionSide from "../../components/Layout/TransactionSide";
+import SendMoneyRightBar from "../../components/Layout/SendMoneyRightBar";
+import PayRightBar from "../../components/Layout/PayRightBar";
+
 const Dashboard = () => {
 	const [transactions, setTransaction] = useState([]);
 	const [showRightBar, setShowRightBar] = useState(false);
+	const [showSendMoney, setShowSendMoney] = useState(false);
+	const [showPayPage, setShowPayPage] = useState(false);
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -73,18 +79,35 @@ const Dashboard = () => {
 	const hideTransaction = () => {
 		setShowRightBar(false);
 	};
+
+	const sendMoneyBar = () => {
+		setShowSendMoney(true);
+	};
+
+	const hideSendBar = () => {
+		setShowSendMoney(false);
+	};
+
+	const goToPay = () => {
+		setShowPayPage(true);
+	};
+
+	const hidePayPage = () => {
+		setShowPayPage(false);
+	};
 	return (
 		<>
 			<div className="flex-col align-center">
 				<Sidebar />
 			</div>
-			<div className={`top-0 right-0 w-full lg:w-[500px] p-10 px-4 bg-white shadow-2xl text-white fixed h-full z-40  ease-in-out duration-300 ${showRightBar ? "translate-x-0 " : "translate-x-full"}`}>
-				<div className="mt-6 text-2xl font-semibold text-black flex items-center">
-					<a className="border cursor-pointer bg-gray-200 rounded-xl w-[40px] h-[40px] flex justify-center items-center text-center" onClick={hideTransaction}>
-						<ChevronLeftIcon className="h-4 w-4" />
-					</a>
-					<span className="ml-3">Go back</span>
-				</div>
+			<div className={`top-0 right-0 w-full lg:w-[500px] bg-white shadow-2xl text-white fixed h-full z-40  ease-in-out duration-300 ${showRightBar ? "translate-x-0 " : "translate-x-full"}`}>
+				<TransactionSide hideTransaction={hideTransaction} />
+			</div>
+			<div className={`top-0 right-0 w-full lg:w-[500px] bg-white shadow-2xl text-white fixed h-full z-40  ease-in-out duration-300 ${showSendMoney ? "translate-x-0 " : "translate-x-full"}`}>
+				<SendMoneyRightBar hideSendBar={hideSendBar} goToPay={goToPay} />
+			</div>
+			<div className={`top-0 right-0 w-full lg:w-[500px] bg-white shadow-2xl text-white fixed h-full z-40  ease-in-out duration-300 ${showPayPage ? "translate-x-0 " : "translate-x-full"}`}>
+				<PayRightBar hidePayPage={hidePayPage} />
 			</div>
 			<div className="text-center w-full max-w-[calc(100vw-21rem)] float-right px-6 py-5">
 				<div className="w-100 flex justify-between font-satoshi">
@@ -200,7 +223,7 @@ const Dashboard = () => {
 										</div>
 										<div className="flex justify-center">
 											<img src={outcome} alt="Outcome" />
-											Income: <span className="font-bold">$16,257</span>
+											Outcome: <span className="font-bold">$16,257</span>
 										</div>
 									</div>
 								</a>
@@ -209,14 +232,14 @@ const Dashboard = () => {
 						<div className="mt-4">
 							<div className="grid grid-cols-2 gap-4">
 								<div>
-									<a className="btn hover:bg-gray-300  cursor-pointer border border-gray-300 rounded-xl h-14 w-100 flex justify-between px-3 items-center text-center">
-										<span>Send</span>
+									<a className="btn hover:bg-gray-300  cursor-pointer border border-gray-300 rounded-xl h-14 w-100 flex justify-between px-3 items-center text-center" onClick={sendMoneyBar}>
+										<span>Send Money</span>
 										<img src={send} />
 									</a>
 								</div>
 								<div>
 									<a className="btn hover:bg-gray-300  cursor-pointer border border-gray-300 rounded-xl h-14 w-100 flex justify-between px-3 items-center text-center">
-										<span>Receive</span>
+										<span>Receive Money</span>
 										<img src={receive} />
 									</a>
 								</div>

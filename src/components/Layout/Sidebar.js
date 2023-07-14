@@ -44,7 +44,7 @@ export default function Navbar() {
 		setSideList([...newLists]);
 	};
 	return (
-		<Card className="fixed top-4 left-4 h-[calc(100vh-2rem)] rounded-2xl bg-gray-900 w-full max-w-[20rem] p-4 ">
+		<Card className="fixed top-3 left-3 h-[calc(100vh-1.5rem)] rounded-2xl bg-gray-900 w-full max-w-[20rem] p-4 ">
 			<div className="mb-2 p-4 ">
 				<Typography variant="h3" color="white" className="text-left">
 					Banking<span className="text-green-600"> App</span>
