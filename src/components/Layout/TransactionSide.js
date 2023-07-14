@@ -19,14 +19,14 @@ const TransactionSide = (props) => {
 					<div className="p-3 bg-gray-900 rounded-xl">
 						<img src={cupoftea} width={30} height={30} />
 					</div>
-					<h2 className="text-black text-2xl font-bold mt-3">{props.data.name.name}</h2>
-					<h2 className="text-gray-700 font-bold mt-2">{props.data.date}</h2>
+					<h2 className="text-black text-2xl font-bold mt-3">{props?.data?.name?.name}</h2>
+					<h2 className="text-gray-700 font-bold mt-2">{props?.data?.date}</h2>
 					<span className="text-black inline-flex items-center justify-center font-semibold bg-orange-300 rounded py-1 px-2 mt-3">Pending</span>
 				</div>
 			</div>
 			<div className="w-full flex justify-center -translate-y-[50%]">
 				<div className="w-[90%] border rounded-2xl bg-white p-6  text-center">
-					<h1 className="text-black text-6xl font-bold text-center">${props.data.amount}</h1>
+					<h1 className="text-black text-6xl font-bold text-center">${props?.data?.amount}</h1>
 					<div className="flex justify-center items-center mt-6">
 						<img src={outcome} alt="Outcome" />
 						<span className="text-black ml-2 font-bold">Outcome</span>
