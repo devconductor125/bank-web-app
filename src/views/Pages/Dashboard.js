@@ -138,14 +138,14 @@ const Dashboard = () => {
 					<div className="text-3xl font-bold">Good morning, Amelia!</div>
 					<div>
 						<img src={avatar} className="peer rounded-3xl" width={50} height={50}></img>
-						<div class="hidden peer-hover:flex hover:flex w-[120px] flex-col bg-white drop-shadow-lg absolute right-8 mt-[-10px]">
-							<a class="px-2 py-3 hover:bg-gray-200" href="#">
+						<div className="hidden peer-hover:flex hover:flex w-[120px] flex-col bg-white drop-shadow-lg absolute right-8 mt-[-10px]">
+							<a className="px-2 py-3 hover:bg-gray-200" href="#">
 								About Us
 							</a>
-							<a class="px-2 py-3 hover:bg-gray-200" href="#">
+							<a className="px-2 py-3 hover:bg-gray-200" href="#">
 								Contact Us
 							</a>
-							<a class="px-2 py-3 hover:bg-gray-200 flex justify-center items-center" onClick={() => logout()}>
+							<a className="px-2 py-3 hover:bg-gray-200 flex justify-center items-center" onClick={() => logout()}>
 								<ArrowLeftOnRectangleIcon width={30} height={15} />
 								Logout
 							</a>

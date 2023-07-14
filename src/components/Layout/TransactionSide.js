@@ -1,11 +1,10 @@
-import { WalletIcon, ChevronLeftIcon, ShoppingCartIcon, MapPinIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
+import { ChevronLeftIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import outcome from "../../assets/images/outcome.svg";
 import cupoftea from "../../assets/images/cupoftea.svg";
 import coin from "../../assets/images/coin.svg";
 import apple from "../../assets/images/apple.svg";
 
 const TransactionSide = (props) => {
-	console.log(props.data);
 	return (
 		<div>
 			<div className="h-[400px] bg-green-100">
