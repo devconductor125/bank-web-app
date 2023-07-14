@@ -2,6 +2,8 @@ import { Card, Typography, List, ListItem, ListItemPrefix } from "@material-tail
 import { ShoppingBagIcon, BuildingLibraryIcon, CurrencyDollarIcon, CreditCardIcon, QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import { useState, useEffect } from "react";
 
+import transaction from "../../assets/images/transaction.svg";
+
 export default function Navbar() {
 	const [sideList, setSideList] = useState([]);
 

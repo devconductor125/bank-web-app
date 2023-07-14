@@ -48,7 +48,7 @@ const SendMoney = (props) => {
 	}, []);
 	return (
 		<div>
-			<div className="p-6 overflow-scroll">
+			<div className="p-6 ">
 				<div className=" text-xl font-semibold text-black flex items-center">
 					<a className=" cursor-pointer bg-gray-200 rounded-xl w-[40px] h-[40px] flex justify-center items-center text-center" onClick={props.hideSendBar}>
 						<ChevronLeftIcon className="h-4 w-4" />

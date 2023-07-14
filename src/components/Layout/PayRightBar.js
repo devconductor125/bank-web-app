@@ -1,5 +1,6 @@
-import { ChevronLeftIcon, WifiIcon, ArrowSmallLeftIcon } from "@heroicons/react/24/solid";
+import { ChevronLeftIcon, WifiIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
+import backspace from "../../assets/images/backspace.svg";
 
 const PayRightBar = (props) => {
 	const [amount, setAmount] = useState(0);
@@ -105,14 +106,16 @@ const PayRightBar = (props) => {
 					</div>
 				</div>
 				<div className="w-full grid grid-cols-3 gap-3 mt-3">
-					<div className="text-black col-span-2 text-center w-full text-2xl ">
+					<div className="text-black col-span-1 text-center w-full text-2xl "></div>
+					<div className="text-black col-span-1 text-center w-full text-2xl ">
 						<button className="btn-pay w-full rounded-2xl py-3 font-bold" onClick={() => handleNumber(0)}>
 							0
 						</button>
 					</div>
 					<div className="text-black col-span-1 text-center w-full text-2xl ">
-						<button className="btn-pay w-full rounded-2xl py-3 flex justify-center" onClick={backSpace}>
-							<ArrowSmallLeftIcon width={30} />
+						<button className=" w-full rounded-2xl py-3 flex justify-center" onClick={backSpace}>
+							{/* <ArrowSmallLeftIcon  /> */}
+							<img src={backspace} width={30} />
 						</button>
 					</div>
 				</div>

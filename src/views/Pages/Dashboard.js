@@ -5,12 +5,14 @@ import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Layout/Sidebar";
 
 import avatar from "../../assets/images/avatar.png";
-import card1 from "../../assets/images/card1.svg";
-import card2 from "../../assets/images/card2.svg";
+import card1 from "../../assets/images/card-1.png";
+import card2 from "../../assets/images/card-2.png";
 import income from "../../assets/images/income.svg";
 import outcome from "../../assets/images/outcome.svg";
 import send from "../../assets/images/send.svg";
 import receive from "../../assets/images/receive.svg";
+import coin from "../../assets/images/coin.svg";
+import android from "../../assets/images/android.svg";
 
 import TransactionSide from "../../components/Layout/TransactionSide";
 import SendMoneyRightBar from "../../components/Layout/SendMoneyRightBar";
@@ -23,6 +25,7 @@ const Dashboard = () => {
 	const [showSendMoney, setShowSendMoney] = useState(false);
 	const [showPayPage, setShowPayPage] = useState(false);
 	const [showCheckOut, setCheckOut] = useState(false);
+	const [transDetail, setTransDetail] = useState({});
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -76,6 +79,7 @@ const Dashboard = () => {
 
 	const viewTransaction = (transaction) => {
 		setShowRightBar(true);
+		setTransDetail(transactions[transaction]);
 	};
 
 	const hideTransaction = () => {
@@ -117,16 +121,16 @@ const Dashboard = () => {
 			<div className="flex-col align-center">
 				<Sidebar />
 			</div>
-			<div className={`top-0 right-0 w-full lg:w-[500px] bg-white shadow-2xl text-white fixed h-full z-40  ease-in-out duration-300 ${showRightBar ? "translate-x-0 " : "translate-x-full"}`}>
-				<TransactionSide hideTransaction={hideTransaction} />
+			<div className={`top-0 overflow-y-scroll right-0 w-full lg:w-[500px] bg-white shadow-2xl text-white fixed h-full z-40 ease-in-out duration-300 ${showRightBar ? "translate-x-0 " : "translate-x-full"}`}>
+				<TransactionSide hideTransaction={hideTransaction} data={transDetail} />
 			</div>
-			<div className={`top-0 right-0 w-full lg:w-[500px] bg-white shadow-2xl text-white fixed h-full z-40  ease-in-out duration-300 ${showSendMoney ? "translate-x-0 " : "translate-x-full"}`}>
+			<div className={`overflow-y-scroll top-0 right-0 w-full lg:w-[500px] bg-white shadow-2xl text-white fixed h-full z-40 ease-in-out duration-300 ${showSendMoney ? "translate-x-0 " : "translate-x-full"}`}>
 				<SendMoneyRightBar hideSendBar={hideSendBar} goToPay={goToPay} />
 			</div>
-			<div className={`top-0 right-0 w-full lg:w-[500px] bg-white shadow-2xl text-white fixed h-full z-40  ease-in-out duration-300 ${showPayPage ? "translate-x-0 " : "translate-x-full"}`}>
+			<div className={`overflow-y-scroll top-0 right-0 w-full lg:w-[500px] bg-white shadow-2xl text-white fixed h-full z-40 ease-in-out duration-300 ${showPayPage ? "translate-x-0 " : "translate-x-full"}`}>
 				<PayRightBar hidePayPage={hidePayPage} sendMoneyCheck={sendMoneyCheck} />
 			</div>
-			<div className={`top-0 right-0 w-full lg:w-[500px] bg-white shadow-2xl text-white fixed h-full z-40  ease-in-out duration-300 ${showCheckOut ? "translate-x-0 " : "translate-x-full"}`}>
+			<div className={`overflow-y-scroll top-0 right-0 w-full lg:w-[500px] bg-white shadow-2xl text-white fixed h-full z-40 ease-in-out duration-300 ${showCheckOut ? "translate-x-0 " : "translate-x-full"}`}>
 				<CheckoutMessage hideCheckout={hideCheckout} clearAll={clearAll} />
 			</div>
 			<div className="text-center w-full max-w-[calc(100vw-21rem)] float-right px-6 py-5">
@@ -155,14 +159,29 @@ const Dashboard = () => {
 								Cards<span className="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-blue-800 bg-blue-100 rounded">2</span>
 							</span>
 						</div>
-						<div className="grid grid-cols-12 mt-2 gap-3">
-							<div className="col-span-6">
-								<img src={card1} alt="Card 1" className="w-full" />
+						<div className="grid lg:grid-cols-12 grid-cols-6 mt-2 gap-3 h-[250px] w-min-[800px] ">
+							<div className="col-span-6 relative">
+								<img src={card1} alt="Card 1" className="w-full absolute z-10 rounded-[20px] h-full" />
+								<div className=" absolute z-20 bottom-8 left-8 ">
+									<div className=" text-2xl font-bold w-full tracking-[1.5px]">**** **** **** 9000</div>
+									<div className="flex justify-between mt-2">
+										<span className="text-sm font-bold">Olivia Dennis</span>
+										<span className="text-sm font-bold">12/24</span>
+									</div>
+								</div>
 							</div>
-							<div className="col-span-6">
-								<img src={card2} alt="Card 2" className="w-full" />
+							<div className="col-span-6 relative">
+								<img src={card2} alt="Card 1" className="w-full absolute z-10 rounded-[20px] h-full" />
+								<div className=" absolute z-20 bottom-8 left-8 ">
+									<div className=" text-2xl font-bold w-full tracking-[2px]">**** **** **** 9000</div>
+									<div className="flex justify-between mt-2">
+										<span className="text-sm font-bold">Olivia Dennis</span>
+										<span className="text-sm font-bold">12/24</span>
+									</div>
+								</div>
 							</div>
 						</div>
+
 						<div>
 							<div className="text-left mt-4 flex justify-between">
 								<span className="text-2xl font-bold">Transactions</span>
@@ -185,7 +204,7 @@ const Dashboard = () => {
 										<option value="rejected">Rejected</option>
 									</select>
 									<div className="border border-gray-300 rounded-xl w-32 flex justify-center items-center text-center">
-										<ArchiveBoxIcon className="h-4 w-4" />
+										<img src={android} className="h-4 w-4" />
 									</div>
 								</div>
 							</div>
@@ -208,15 +227,15 @@ const Dashboard = () => {
 										<tbody>
 											{transactions.map((item, index) => {
 												return (
-													<tr key={index} className="cursor-pointer" onClick={() => viewTransaction(index)}>
-														<td className="py-2 cursor-pointer">
+													<tr key={index} className="cursor-pointer hover:bg-gray-200" onClick={() => viewTransaction(index)}>
+														<td className="py-2 cursor-pointer pl-3">
 															<div className="flex items-center">
 																<img src={item.name.avatar} width={40} height={40} className="rounded-xl" />
 																<span className="font-bold ml-3 font-sans">{item.name.name}</span>
 															</div>
 														</td>
 														<td className="text-gray-500 text-sm">{item.date}</td>
-														<td className="text-right font-bold text-sm font-sans">${item.amount}</td>
+														<td className="text-right font-bold text-sm font-sans pr-3">${item.amount}</td>
 													</tr>
 												);
 											})}
@@ -233,7 +252,7 @@ const Dashboard = () => {
 								<a className=" w-full block  p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 									<span className="my-3 text-base tracking-tight text-gray-900 dark:text-white">Actual Balance</span>
 									<p className="text-gray-900 dark:text-white text-3xl font-bold justify-center flex text-center items-center mt-3">
-										<WalletIcon className="h-5 w-5 mr-2 " />
+										<img src={coin} className="h-5 w-5 mr-2 " />
 										$242,456
 									</p>
 									<div className="grid grid-cols-2 mt-6 mb-2">
