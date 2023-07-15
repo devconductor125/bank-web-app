@@ -1,12 +1,13 @@
+// eslint-disable-next-line
 import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 const CheckoutMessage = (props) => {
 	return (
 		<div>
 			<div className="h-[100vh] bg-white">
 				<div className="p-6 text-xl font-semibold text-black flex items-center">
-					<a className=" cursor-pointer bg-gray-200 rounded-xl w-[40px] h-[40px] flex justify-center items-center text-center" onClick={props.hideCheckout}>
+					<div className=" cursor-pointer bg-gray-200 rounded-xl w-[40px] h-[40px] flex justify-center items-center text-center" onClick={props.hideCheckout}>
 						<ChevronLeftIcon className="h-4 w-4" />
-					</a>
+					</div>
 					<span className="ml-3">Go back</span>
 				</div>
 				<div className="h-[calc(100vh-150px)] flex flex-col justify-center items-center text-black px-10">

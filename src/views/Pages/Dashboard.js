@@ -138,18 +138,18 @@ const Dashboard = () => {
 				<div className="w-100 flex justify-between font-satoshi">
 					<div className="text-3xl font-bold">Good morning, Amelia!</div>
 					<div>
-						<img src={avatar} className="peer rounded-3xl" width={50} height={50}></img>
+						<img src={avatar} className="peer rounded-3xl" width={50} height={50} alt="avatar" />
 						<div className="hidden peer-hover:flex hover:flex w-[120px] flex-col bg-white drop-shadow-lg absolute right-8 mt-[-10px]">
-							<a className="px-2 py-3 hover:bg-gray-200" href="#">
+							<div className="px-2 py-3 hover:bg-gray-200" href="#">
 								About Us
-							</a>
-							<a className="px-2 py-3 hover:bg-gray-200" href="#">
+							</div>
+							<div className="px-2 py-3 hover:bg-gray-200" href="#">
 								Contact Us
-							</a>
-							<a className="px-2 py-3 hover:bg-gray-200 flex justify-center items-center" onClick={() => logout()}>
+							</div>
+							<div className="px-2 py-3 hover:bg-gray-200 flex justify-center items-center" onClick={() => logout()}>
 								<ArrowLeftOnRectangleIcon width={30} height={15} />
 								Logout
-							</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -205,7 +205,7 @@ const Dashboard = () => {
 										<option value="rejected">Rejected</option>
 									</select>
 									<div className="border border-gray-300 rounded-xl w-32 flex justify-center items-center text-center">
-										<img src={android} className="h-4 w-4" />
+										<img src={android} className="h-4 w-4" alt="icon" />
 									</div>
 								</div>
 							</div>
@@ -231,7 +231,7 @@ const Dashboard = () => {
 													<tr key={index} className="cursor-pointer hover:bg-gray-200" onClick={() => viewTransaction(index)}>
 														<td className="py-2 cursor-pointer pl-3">
 															<div className="flex items-center">
-																<img src={item.name.avatar} width={40} height={40} className="rounded-xl" />
+																<img src={item.name.avatar} width={40} height={40} className="rounded-xl" alt="avatar" />
 																<span className="font-bold ml-3 font-sans">{item.name.name}</span>
 															</div>
 														</td>
@@ -250,10 +250,10 @@ const Dashboard = () => {
 						<div className="text-left w-full">
 							<span className="text-2xl font-bold">Current Balance</span>
 							<div className="mt-2 text-center w-full">
-								<a className=" w-full block  p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+								<div className=" w-full block  p-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 									<span className="my-3 text-base tracking-tight text-gray-900 dark:text-white">Actual Balance</span>
 									<p className="text-gray-900 dark:text-white text-3xl font-bold justify-center flex text-center items-center mt-3">
-										<img src={coin} className="h-5 w-5 mr-2 " />
+										<img src={coin} className="h-5 w-5 mr-2 " alt="icon0" />
 										$242,456
 									</p>
 									<div className="grid grid-cols-2 mt-6 mb-2">
@@ -266,22 +266,22 @@ const Dashboard = () => {
 											Outcome: <span className="font-bold">$16,257</span>
 										</div>
 									</div>
-								</a>
+								</div>
 							</div>
 						</div>
 						<div className="mt-4">
 							<div className="grid grid-cols-2 gap-4">
 								<div>
-									<a className="btn hover:bg-gray-300  cursor-pointer border border-gray-300 rounded-xl h-14 w-100 flex justify-between px-3 items-center text-center" onClick={sendMoneyBar}>
+									<button className="btn hover:bg-gray-300  cursor-pointer border border-gray-300 rounded-xl h-14 w-100 flex justify-between px-3 items-center text-center" onClick={sendMoneyBar}>
 										<span>Send Money</span>
-										<img src={send} />
-									</a>
+										<img src={send} alt="icon0" />
+									</button>
 								</div>
 								<div>
-									<a className="btn hover:bg-gray-300  cursor-pointer border border-gray-300 rounded-xl h-14 w-100 flex justify-between px-3 items-center text-center">
+									<button className="btn hover:bg-gray-300  cursor-pointer border border-gray-300 rounded-xl h-14 w-100 flex justify-between px-3 items-center text-center">
 										<span>Receive Money</span>
-										<img src={receive} />
-									</a>
+										<img src={receive} alt="icon0" />
+									</button>
 								</div>
 							</div>
 						</div>

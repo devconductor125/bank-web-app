@@ -7,7 +7,7 @@ const PayRightBar = (props) => {
 	const [amount, setAmount] = useState(0);
 
 	const handleNumber = (value) => {
-		const newValue = amount == 0 ? value : amount * 1 + "" + value;
+		const newValue = amount === 0 ? value : amount * 1 + "" + value;
 		setAmount(parseInt(newValue));
 	};
 
@@ -20,15 +20,15 @@ const PayRightBar = (props) => {
 		<div>
 			<div className="p-6">
 				<div className=" text-xl font-semibold text-black flex items-center">
-					<a className=" cursor-pointer bg-gray-200 rounded-xl w-[40px] h-[40px] flex justify-center items-center text-center" onClick={props.hidePayPage}>
+					<div className=" cursor-pointer bg-gray-200 rounded-xl w-[40px] h-[40px] flex justify-center items-center text-center" onClick={props.hidePayPage}>
 						<ChevronLeftIcon className="h-4 w-4" />
-					</a>
+					</div>
 					<span className="ml-3">Go back</span>
 				</div>
 				<div className="text-center flex flex-col items-center">
 					<h2 className="text-black text-2xl font-bold mt-6">You are sending to: </h2>
 					<div className="w-[300px] flex items-center border rounded-2xl p-2 mt-4">
-						<img src="https://ui-avatars.com/api/?name=John+Doe&background=E5F5F9&color=000" width={55} height={55} className="rounded-xl" />
+						<img src="https://ui-avatars.com/api/?name=John+Doe&background=E5F5F9&color=000" alt="avatar" width={55} height={55} className="rounded-xl" />
 						<div className="flex flex-col justify-center text-left ml-3">
 							<h5 className="text-black font-bold">John Doe</h5>
 							<h5 className="text-gray-600">1234 5678 **** 9000</h5>
@@ -116,7 +116,7 @@ const PayRightBar = (props) => {
 					<div className="text-black col-span-1 text-center w-full text-2xl ">
 						<button className=" w-full rounded-2xl py-3 flex justify-center" onClick={backSpace}>
 							{/* <ArrowSmallLeftIcon  /> */}
-							<img src={backspace} width={30} />
+							<img src={backspace} width={30} alt="backbutton" />
 						</button>
 					</div>
 				</div>

@@ -51,9 +51,9 @@ const SendMoney = (props) => {
 		<div>
 			<div className="p-6 ">
 				<div className=" text-xl font-semibold text-black flex items-center">
-					<a className=" cursor-pointer bg-gray-200 rounded-xl w-[40px] h-[40px] flex justify-center items-center text-center" onClick={props.hideSendBar}>
+					<div className=" cursor-pointer bg-gray-200 rounded-xl w-[40px] h-[40px] flex justify-center items-center text-center" onClick={props.hideSendBar}>
 						<ChevronLeftIcon className="h-4 w-4" />
-					</a>
+					</div>
 					<span className="ml-3">Go back</span>
 				</div>
 				<div className="text-black mt-6">
@@ -81,7 +81,7 @@ const SendMoney = (props) => {
 				<div className="text-black mt-6">
 					<h6 className="mb-2 text-sm text-gray-900 dark:text-white font-bold">My Cards</h6>
 					<div className="flex items-center">
-						<img src="https://ui-avatars.com/api/?name=John+Doe&background=E5F5F9&color=000" width={50} height={50} className="rounded-xl" />
+						<img alt="avatar" src="https://ui-avatars.com/api/?name=John+Doe&background=E5F5F9&color=000" width={50} height={50} className="rounded-xl" />
 						<span className="ml-6 text-black font-bold">On my card 1234****9000</span>
 					</div>
 				</div>
@@ -90,7 +90,7 @@ const SendMoney = (props) => {
 					{lastTransfers.map((item, index) => {
 						return (
 							<div className="flex items-center mt-3 cursor-pointer" key={index} onClick={props.goToPay}>
-								<img src={item.avatar} width={50} height={50} className="rounded-xl" />
+								<img alt="avatar" src={item.avatar} width={50} height={50} className="rounded-xl" />
 								<div className="flex flex-col justify-center ml-3">
 									<h5 className="text-black font-bold">{item.name}</h5>
 									<h5 className="text-gray-600">{item.card}</h5>
@@ -104,7 +104,7 @@ const SendMoney = (props) => {
 					{aGroup.map((item, index) => {
 						return (
 							<div className="flex items-center mt-3 cursor-pointer" key={index} onClick={props.goToPay}>
-								<img src={item.avatar} width={50} height={50} className="rounded-xl" />
+								<img alt="avatar" src={item.avatar} width={50} height={50} className="rounded-xl" />
 								<div className="flex flex-col justify-center ml-3">
 									<h5 className="text-black font-bold">{item.name}</h5>
 									<h5 className="text-gray-600">{item.card}</h5>
@@ -118,7 +118,7 @@ const SendMoney = (props) => {
 					{aGroup.map((item, index) => {
 						return (
 							<div className="flex items-center mt-3 cursor-pointer" key={index} onClick={props.goToPay}>
-								<img src={item.avatar} width={50} height={50} className="rounded-xl" />
+								<img alt="avatar" src={item.avatar} width={50} height={50} className="rounded-xl" />
 								<div className="flex flex-col justify-center ml-3">
 									<h5 className="text-black font-bold">{item.name}</h5>
 									<h5 className="text-gray-600">{item.card}</h5>
