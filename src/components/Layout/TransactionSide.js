@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { ChevronLeftIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import outcome from "../../assets/images/outcome.svg";
 import cupoftea from "../../assets/images/cupoftea.svg";

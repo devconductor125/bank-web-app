@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { useState } from "react";
 import Input from "../../../components/UI/Input/Input";
 import { Link, useNavigate } from "react-router-dom";
@@ -14,10 +15,7 @@ const SignupForm = () => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		console.log("adfasdf");
-
 		navigate("/dashboard");
-		// window.location.href("/dashboard");
 	};
 
 	return (

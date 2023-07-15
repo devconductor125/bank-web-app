@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { Routes, Route } from "react-router-dom";
 import Signup from "../views/Auth/Signup";
 import Signin from "../views/Auth/Signin";

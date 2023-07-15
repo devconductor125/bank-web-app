@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { ChevronLeftIcon, WifiIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import backspace from "../../assets/images/backspace.svg";

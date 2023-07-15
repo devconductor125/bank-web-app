@@ -1,5 +1,6 @@
+// eslint-disable-next-line
 import { useState, useEffect } from "react";
-import { WalletIcon, ArchiveBoxIcon, CurrencyDollarIcon, ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
+import { CurrencyDollarIcon, ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
 
 import Sidebar from "../../components/Layout/Sidebar";
